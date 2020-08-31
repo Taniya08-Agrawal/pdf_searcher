@@ -1,0 +1,85 @@
+<!Doctype html>
+<html>
+    <head>
+	<title>PDF Searcher</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<script type="text/javascript">
+		function active(){
+		    var SearchBar=document.getElementById('SearchBar');
+		    if(SearchBar.value=='Type to Search'){
+				SearchBar.value=''
+				SearchBar.placeholder='Type to Search'
+		    }
+		}
+		function inactive(){
+		    var SearchBar=document.getElementById("SearchBar");
+		    if(SearchBar.value==''){
+				SearchBar.value='Type to Search'
+				SearchBar.placeholder=''
+		    }
+		}
+		function pdf(){
+			let input=document.getElementById('SearchBar').value
+			input=input.toLowerCase();
+			let x=document.getElementsByClassName('pdfs');
+			for(i=0;i<x.length;i++){
+				if(!x[i].innerHTML.toLowerCase().includes(input)){
+					x[i].style.display="none";
+				}
+				else{
+					x[i].style.display="list-item";
+				}
+			}
+		}
+		
+	</script>
+	<style>
+	body{
+	background-image: url("https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?cs=srgb&dl=pexels-simon-matzinger-1323550=jpg&fm.jpg"); no-repeat center fixed;     
+    	background-size: cover;
+	}
+	
+	</style>
+   </head>
+   <body>
+	<div class="gif">
+	<img src="pdf.gif">
+	</div>
+	<div class="Button">
+	<form action="search.php" method="post">
+	<input type="text" id="SearchBar" placeholder="" value="Type to Search"  onkeyup="pdf()" maxlength="25" autocomplete="off" onMouseDown="active();" onBlur="inactive();" /><input type="submit" id="button" value="GO" />
+	</form>	
+	</div>
+	<ol id="list">
+		<li class="pdfs"><a href="1.pdf">1</a></li>
+		<li class="pdfs"><a href="2.pdf">2</a></li>
+		<li class="pdfs"><a href="3.pdf">3</a></li>
+		<li class="pdfs"><a href="4.pdf">4</a></li>
+		<li class="pdfs"><a href="4__Judgement_11-May-2018.pdf">4__Judgement_11-May-2018</a></li>
+		<li class="pdfs"><a href="5.pdf">5</a></li>
+		<li class="pdfs"><a href="6.pdf">6</a></li>
+		<li class="pdfs"><a href="6__Judgement_11-May-2018.pdf">6__Judgement_11-May-2018</a></li>
+		<li class="pdfs"><a href="6__Judgement_23-July-2017.pdf">6__Judgement_23-July-2017</a></li>
+		<li class="pdfs"><a href="7.pdf">7</a></li>
+		<li class="pdfs"><a href="8.pdf">8</a></li>
+		<li class="pdfs"><a href="8__Judgement_11-May-2018.pdf">8__Judgement_11-May-2018</a></li>
+		<li class="pdfs"><a href="8__Judgement_15-Sept-2017.pdf">8__Judgement_15-Sept-2017</a></li>
+		<li class="pdfs"><a href="9.pdf">9</a></li>
+		<li class="pdfs"><a href="9__Judgement_11-May-2018.pdf">9__Judgement_11-May-2018</a></li>
+		<li class="pdfs"><a href="10.pdf">10</a></li>
+		<li class="pdfs"><a href="10__Judgement_11-May-2018.pdf">10__Judgement_11-May-2018</a></li>
+		<li class="pdfs"><a href="10__Judgement_12-Feb-2018.pdf">10__Judgement_12-Feb-2018</a></li>
+		<li class="pdfs"><a href="11.pdf">11</a></li>
+		<li class="pdfs"><a href="12.pdf">12</a></li>
+		<li class="pdfs"><a href="12__Judgement_19-Jun-2017.pdf">12__Judgement_19-Jun-2017</a></li>
+		<li class="pdfs"><a href="13.pdf">13</a></li>
+		<li class="pdfs"><a href="13__Judgement_20-Sept-2017.pdf">13__Judgement_20-Sept-2017</a></li>
+		<li class="pdfs"><a href="14.pdf">14</a></li>
+		<li class="pdfs"><a href="14__Judgement_16-Feb-2018.pdf">14__Judgement_16-Feb-2018</a></li>
+		<li class="pdfs"><a href="15.pdf">15</a></li>
+		<li class="pdfs"><a href="15__Judgement_19-Jun-2017.pdf">15__Judgement_19-Jun-2017</a></li>
+	</ol>
+	
+	<script src="./pdfs.js"></script>
+   </body>
+</html>
